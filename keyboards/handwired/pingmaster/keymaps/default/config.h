@@ -1,4 +1,4 @@
-/* Copyright 2017 REPLACE_WITH_YOUR_NAME
+/* Copyright 2018 Cleon Chick
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -13,22 +13,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef PINGMASTER_H
-#define PINGMASTER_H
 
-#include "quantum.h"
+#ifndef CONFIG_USER_H
+#define CONFIG_USER_H
 
-// This a shortcut to help you visually see your layout.
-// The following is an example using the Planck MIT layout
-// The first section contains all of the arguments
-// The second converts the arguments into a two-dimensional array
-#define KEYMAP( \
-    k00, k01, k02, \
-      k10,  k11   \
-) \
-{ \
-    { k00, k01,   k02 }, \
-    { k10, KC_NO, k11 }, \
-}
+#include "config_common.h"
 
 #endif
