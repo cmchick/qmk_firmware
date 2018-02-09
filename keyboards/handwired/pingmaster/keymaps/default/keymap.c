@@ -17,11 +17,17 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = KC_KEYMAP(
-     ESC,   1,   2,   3,   4,   5,   6,   7,   8,   9,   0,MINS, EQL,BSPC,BSPC, F21,  PSCR,SLCK,PAUS,    F1,  F2,  F3,  F4,
-     TAB,    Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,LBRC,RBRC,  BSLS,   F22,   INS,HOME,PGUP,    F5,  F6,  F7,  F8,
-     LCTL,    A,   S,   D,   F,   G,   H,   J,   K,   L,SCLN,QUOT, ENT,   ENT,  F23,   DEL, END,PGDN,    F9, F10, F11, F12,
-     LSFT,     Z,   X,   C,   V,   B,   N,   M,COMM, DOT,SLSH,RSFT,     RSFT,   F24,    NO,  UP,  NO,   F13, F14, F15, F16,
-     FN1, LGUI,  LALT,                SPC,              RALT,  RGUI,       FN1,       LEFT,DOWN,RGHT,   F17, F18, F19, F20
+     KC_ESC,   KC_1,   KC_2,   KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,   KC_0,KC_MINS, KC_EQL,KC_BSPC,KC_BSPC, KC_F21,
+     KC_TAB,    KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,KC_LBRC,KC_RBRC,   KC_BSLS,     KC_F22,
+     KC_LCTL,    KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,KC_SCLN,KC_QUOT, KC_ENT,     KC_ENT,   KC_F23,
+     KC_LSFT,     KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,KC_COMM, KC_DOT,KC_SLSH,KC_RSFT,      KC_RSFT,        KC_F24,
+      MO(1), KC_LGUI,  KC_LALT,                      KC_SPC,                        KC_RALT,  KC_RGUI,            MO(1),
+
+    PSCR,SLCK,PAUS,    F1,  F2,  F3,  F4,
+     INS,HOME,PGUP,    F5,  F6,  F7,  F8,
+     DEL, END,PGDN,    F9, F10, F11, F12,
+      NO,  UP,  NO,   F13, F14, F15, F16,
+    LEFT,DOWN,RGHT,   F17, F18, F19, F20
   ),
 
   [1] = KC_KEYMAP( /* FN1 */

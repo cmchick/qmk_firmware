@@ -15,13 +15,23 @@
  */
 #include "pingmaster.h"
 
+#define FN_SCLN LT(3, KC_SCLN)
+#define CTLCLCK RCTL_T(KC_CLCK)
+#define ALTBSPC ALT_T(KC_BSPC)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [0] = KC_KEYMAP(
-     ESC,   1,   2,   3,   4,   5,   6,   7,   8,   9,   0,MINS, EQL,BSPC,BSPC,  NO,   INS,HOME,PGUP,    NO,  NO,  NO,  NO,
-     TAB,    Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,LBRC,RBRC,  BSLS,    NO,   DEL, END,PGDN,    NO,  NO,  NO,  NO,
-     FN31,    A,   S,   D,   F,   G,   H,   J,   K,   L, FN3,QUOT, ENT,   ENT,   NO,  PSCR,SLCK,PAUS,    NO,  NO,  NO,  NO,
-     LSFT,     Z,   X,   C,   V,   B,   N,   M,COMM, DOT,SLSH,RSFT,     RSFT,   FN1,  TRNS,  UP,TRNS,    NO,  NO,  NO,  NO,
-    LCTL, LGUI,  FN30,                FN2,              RGUI,  RALT,      RCTL,       LEFT,DOWN,RGHT,    NO,  NO,  NO,  NO
+  [0] = KEYMAP_STACKED(
+     KC_ESC,   KC_1,   KC_2,   KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,   KC_0,KC_MINS, KC_EQL,KC_BSPC,KC_BSPC,  KC_NO,
+     KC_TAB,    KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,KC_LBRC,KC_RBRC,   KC_BSLS,      KC_NO,
+     CTLCLCK,    KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,FN_SCLN,KC_QUOT, KC_ENT,     KC_ENT,    KC_NO,
+     KC_LSFT,     KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,KC_COMM, KC_DOT,KC_SLSH,KC_RSFT,      KC_RSFT,         TT(1),
+    KC_LCTL, KC_LGUI,  ALTBSPC,                    LT(2,KC_SPC),                    KC_RALT,  KC_RGUI,          KC_RCTL,
+
+     KC_INS,KC_HOME,KC_PGUP,   KC_NO,  KC_NO,  KC_NO,  KC_NO,
+     KC_DEL, KC_END,KC_PGDN,   KC_NO,  KC_NO,  KC_NO,  KC_NO,
+    KC_PSCR,KC_SLCK,KC_PAUS,   KC_NO,  KC_NO,  KC_NO,  KC_NO,
+    KC_TRNS,  KC_UP,KC_TRNS,   KC_NO,  KC_NO,  KC_NO,  KC_NO,
+    KC_LEFT,KC_DOWN,KC_RGHT,   KC_NO,  KC_NO,  KC_NO,  KC_NO
   ),
   [1] = KC_KEYMAP( /* "FN" */
     TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,    P7,  P8,  P9,  TRNS,TRNS,TRNS,TRNS,
@@ -44,12 +54,4 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      TRNS,  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,     TRNS,  NLCK,  TRNS,PMNS,TRNS,  TRNS,TRNS,TRNS,TRNS,
     TRNS, TRNS,  TRNS,               TRNS,              TRNS,  TRNS,      TRNS,       PSLS,PPLS,PAST,  TRNS,TRNS,TRNS,TRNS
   )
-};
-
-const uint16_t PROGMEM fn_actions[] = {
-  [1] = ACTION_LAYER_TAP_TOGGLE(1),
-  [2] = ACTION_LAYER_TAP_KEY(2, KC_SPC),
-  [3] = ACTION_LAYER_TAP_KEY(3, KC_SCLN),
-  [30] = ACTION_MODS_TAP_KEY(MOD_LALT, KC_BSPC),
-  [31] = ACTION_MODS_TAP_KEY(MOD_RCTL, KC_CLCK)
 };
